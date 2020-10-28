@@ -1,0 +1,13 @@
+D:\Bootcamp\Labs\Day12_Blockbuster\obj\Debug\netcoreapp3.1\Day12_Blockbuster.csprojAssemblyReference.cache
+D:\Bootcamp\Labs\Day12_Blockbuster\obj\Debug\netcoreapp3.1\Day12_Blockbuster.AssemblyInfoInputs.cache
+D:\Bootcamp\Labs\Day12_Blockbuster\obj\Debug\netcoreapp3.1\Day12_Blockbuster.AssemblyInfo.cs
+D:\Bootcamp\Labs\Day12_Blockbuster\obj\Debug\netcoreapp3.1\Day12_Blockbuster.csproj.CoreCompileInputs.cache
+D:\Bootcamp\Labs\Day12_Blockbuster\bin\Debug\netcoreapp3.1\Day12_Blockbuster.exe
+D:\Bootcamp\Labs\Day12_Blockbuster\bin\Debug\netcoreapp3.1\Day12_Blockbuster.deps.json
+D:\Bootcamp\Labs\Day12_Blockbuster\bin\Debug\netcoreapp3.1\Day12_Blockbuster.runtimeconfig.json
+D:\Bootcamp\Labs\Day12_Blockbuster\bin\Debug\netcoreapp3.1\Day12_Blockbuster.runtimeconfig.dev.json
+D:\Bootcamp\Labs\Day12_Blockbuster\bin\Debug\netcoreapp3.1\Day12_Blockbuster.dll
+D:\Bootcamp\Labs\Day12_Blockbuster\bin\Debug\netcoreapp3.1\Day12_Blockbuster.pdb
+D:\Bootcamp\Labs\Day12_Blockbuster\obj\Debug\netcoreapp3.1\Day12_Blockbuster.dll
+D:\Bootcamp\Labs\Day12_Blockbuster\obj\Debug\netcoreapp3.1\Day12_Blockbuster.pdb
+D:\Bootcamp\Labs\Day12_Blockbuster\obj\Debug\netcoreapp3.1\Day12_Blockbuster.genruntimeconfig.cache
