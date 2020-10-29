@@ -22,13 +22,13 @@ namespace Day12_Blockbuster
                 Console.WriteLine("End of movie, rewind started.");
                 Rewind();
             }
-            string scene = this.Scenes[CurrentTime];
+            string scene = Scenes[CurrentTime];
             Console.WriteLine(scene);
-            this.CurrentTime += 1;
+            CurrentTime += 1;
         }
         public void Rewind()
         {
-            this.CurrentTime = 0;
+            CurrentTime = 0;
         }
     }
 }

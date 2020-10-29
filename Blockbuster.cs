@@ -7,12 +7,13 @@ namespace Day12_Blockbuster
 {
     class Blockbuster
     {
+        const int offset = 1;
         public List<Movie> Movies { get; set; }
 
         public Blockbuster() {
             List<Movie> movies = new List<Movie>();
             List<string> screamScenes = new List<string>() { "First Phone call", "Dead babysitter", "Scared students",
-                "Syd is alone", "Suspecting boyfriend", "Killer revelead", "Killers are dead" };
+                "Syd is alone", "Suspecting boyfriend", "Killer revealed", "Killers are dead" };
             List<string> halloweenScenes = new List<string>() { "Kills sister", "Escapes in transport", "Gains jumpsuit and vehicle",
                 "Comes home", "Finds Laurie", "Kills her friends", "Loomis Shoots Michael", "Michael is gone" };
             List<string> talladegaScenes = new List<string>() { "Learn to go fast", "Go fast", "Crash",
@@ -31,25 +32,15 @@ namespace Day12_Blockbuster
             movies.Add(new DVD("Boondock Saints", Genre.Action, 90, bDScenes));
             movies.Add(new DVD("John Wick", Genre.Action, 112, jWScenes));
 
-            this.Movies = movies;
-        }
-        public void DisplayMenu()
-        {
-            Console.WriteLine("Welcome to Blockbuster Video!");
-            Console.WriteLine();
-
-            Console.WriteLine("1: Checkout a movie");
-            Console.WriteLine("2: Watch a movie");
-            Console.WriteLine();
-            Console.Write("Please select an action: ");
+            Movies = movies;
         }
 
         public void PrintMovies()
         {
-            Console.WriteLine("These are the movies we currently have:" + Environment.NewLine);
+            Console.WriteLine("Please choose from the list of available movies:" + Environment.NewLine);
             for (int i = 0; i < Movies.Count; i++)
             {                
-                int listNumber = i + 1;
+                int listNumber = i + offset;
                 string title = Movies[i].Title;
                 Console.WriteLine($"{listNumber}: {title}");
             }
@@ -61,25 +52,13 @@ namespace Day12_Blockbuster
             PrintMovies();
 
             Console.Write("Select a movie to check out: ");
-            while (int.TryParse(Console.ReadLine().Trim(), out userChoice) == false)
+            while (int.TryParse(Console.ReadLine().Trim(), out userChoice) == false || (userChoice < 1 || userChoice > Movies.Count))
             {
                 Console.Write($"You must enter 1 - {Movies.Count}: ");
             }
             Console.WriteLine();
-            Movies[userChoice - 1].PrintInfo();
-            return Movies[userChoice - 1];
-        }
-        public void PlayMovie()
-        {
-            int userChoice;
-            PrintMovies();
-
-            Console.Write("Select a movie to watch: ");
-            while(int.TryParse(Console.ReadLine().Trim(), out userChoice) == false)
-            {
-                Console.Write($"You must enter 1 - {Movies.Count}: ");
-            }
-            Movies[userChoice - 1].PlayWholeMovie();
+            Movies[userChoice - offset].PrintInfo();
+            return Movies[userChoice - offset];
         }
     }
 }

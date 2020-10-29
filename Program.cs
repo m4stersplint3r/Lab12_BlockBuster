@@ -8,40 +8,67 @@ namespace Day12_Blockbuster
         static void Main(string[] args)
         {
             int menuChoice;
-            string continueYN = "y";
+            string newMovieYN = "y";
+            string watchMovieYN;
+            string continueWatchingYN;
             List<Movie> moviesCheckedOut = new List<Movie>();
             Blockbuster bb = new Blockbuster();
-            while(continueYN == "y")
+            Movie checkedMovie;
+
+            while (newMovieYN == "y")
             {
                 Console.Clear();
-                bb.DisplayMenu();
-                while (int.TryParse(Console.ReadLine().Trim(), out menuChoice) == false)
-                {
-                    Console.Write("You must enter 1 or 2: ");
-                }
 
-                switch (menuChoice)
-                {
-                    case 1:
-                        Movie checkedMovie;
-                        Console.Clear();
-                        checkedMovie = bb.CheckOut();
-                        moviesCheckedOut.Add(checkedMovie);
-                        break;
-                    case 2:
-                        Console.Clear();
-                        bb.PlayMovie();
-                        break;
-                    default:
-                        break;
-                }
-
-                Console.Write($"{Environment.NewLine}Would you like to continue? (y or n): ");
-                continueYN = Console.ReadLine().Trim().ToLower();
-                while(continueYN != "y" && continueYN != "n")
+                Console.WriteLine("Welcome to Blockbuster Video!");
+                Console.WriteLine();
+                checkedMovie = bb.CheckOut();
+                moviesCheckedOut.Add(checkedMovie);
+                Console.WriteLine();
+                Console.Write("Do you want to watch the movie? (y or n): ");
+                watchMovieYN = Console.ReadLine().Trim().ToLower();
+                while(watchMovieYN != "y" && watchMovieYN != "n")
                 {
                     Console.Write("You must enter y or n: ");
-                    continueYN = Console.ReadLine();
+                    newMovieYN = Console.ReadLine();
+                }
+                
+                if (watchMovieYN == "y")
+                {
+                    Console.WriteLine($"{Environment.NewLine}Please choose an option:");
+                    Console.WriteLine($"1. Play all of {checkedMovie.Title}");
+                    Console.WriteLine($"2. Choose a scene from {checkedMovie.Title}{Environment.NewLine}");
+                    Console.Write("Choose: ");
+
+                    while (int.TryParse(Console.ReadLine().Trim(), out menuChoice) == false || (menuChoice != 1 && menuChoice != 2))
+                    {
+                        Console.Write($"You must enter 1 or 2: ");
+                    }
+                    if(menuChoice == 1)
+                    {
+                        checkedMovie.PlayWholeMovie();
+                    }
+                    else if(menuChoice == 2)
+                    {
+                        do
+                        {
+                            checkedMovie.Play();
+                            Console.Write("Watch another scene? (y or n): ");
+                            continueWatchingYN = Console.ReadLine().Trim().ToLower();
+                            while (continueWatchingYN != "y" && continueWatchingYN != "n")
+                            {
+                                Console.Write("You must enter y or n: ");
+                                continueWatchingYN = Console.ReadLine();
+                            }
+                        } while (continueWatchingYN == "y");
+                    }                    
+                }
+
+                Console.Write($"{Environment.NewLine}Would you like to pick another movie? (y or n): ");
+                newMovieYN = Console.ReadLine().Trim().ToLower();
+                while(newMovieYN != "y" && newMovieYN != "n")
+                {
+                    Console.Write("You must enter y or n: ");
+                    newMovieYN = Console.ReadLine();
                 }
             }
 
