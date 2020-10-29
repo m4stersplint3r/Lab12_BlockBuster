@@ -29,7 +29,7 @@ namespace Day12_Blockbuster
                 while(watchMovieYN != "y" && watchMovieYN != "n")
                 {
                     Console.Write("You must enter y or n: ");
-                    newMovieYN = Console.ReadLine();
+                    watchMovieYN = Console.ReadLine().Trim().ToLower();
                 }
                 
                 if (watchMovieYN == "y")
@@ -57,11 +57,12 @@ namespace Day12_Blockbuster
                             while (continueWatchingYN != "y" && continueWatchingYN != "n")
                             {
                                 Console.Write("You must enter y or n: ");
-                                continueWatchingYN = Console.ReadLine();
+                                continueWatchingYN = Console.ReadLine().Trim().ToLower();
                             }
                         } while (continueWatchingYN == "y");
                     }                    
                 }
+
 
                 Console.Write($"{Environment.NewLine}Would you like to pick another movie? (y or n): ");
                 newMovieYN = Console.ReadLine().Trim().ToLower();
