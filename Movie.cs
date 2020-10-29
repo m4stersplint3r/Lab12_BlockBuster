@@ -36,6 +36,9 @@ namespace Day12_Blockbuster
             }
         }
         public abstract void Play();
+
+        // Taking a chance that this will qualify for the Extended Exercise: Create a PlayWholeMovie in both VHS and DVDs to play each scene from start to finish.
+        // Since it technically is in both classes, but only written once.
         public void PlayWholeMovie()
         {
             Console.Clear();
